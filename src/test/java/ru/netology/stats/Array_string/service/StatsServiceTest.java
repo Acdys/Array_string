@@ -5,27 +5,29 @@ import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
     @Test
-    public void shouldFindMinSale(){
+    public void shouldFindMinSale() {
 
         StatsService service = new StatsService();
 
-        long [] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 9;
         int actualMonth = service.minSales(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
+
     @Test
-    public void shouldFindMaxSale(){
+    public void shouldFindMaxSale() {
 
         StatsService service = new StatsService();
 
-        long [] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 8;
         int actualMonth = service.maxSales(sales);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
+
     @Test
     public void shouldFindSumSales() {
 
@@ -36,6 +38,7 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
     public void shouldFindMiddleSumSales() {
 
@@ -46,6 +49,7 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMiddleSum, actualMiddleSum);
     }
+
     @Test
     public void shouldFindUnderMiddleSumSales() {
 
@@ -56,6 +60,7 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedUnderMiddleSum, actualUnderMiddleSum);
     }
+
     @Test
     public void shouldFindMoreMiddleSumSales() {
 

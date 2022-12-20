@@ -19,7 +19,6 @@ public class StatsService {
         int maxMonth = 0;
         int month = 0;
         for (long sale : sales) {
-
             if (sale >= sales[maxMonth]) {
                 maxMonth = month;
             }
@@ -37,30 +36,23 @@ public class StatsService {
     }
 
     public int middleSumSales(int[] sales) {
-        int middleSum = 0;
-        if (sales.length > 0) {
-
-            int sum = 0;
-            for (int j = 0; j < sales.length; j++) {
-                sum += sales[j];
-            }
-            middleSum = sum / sales.length;
-        }
-        return middleSum;
+        return sumSales(sales) / sales.length;
     }
-    public int underMiddleSumSales(int[] sales){
+
+    public int underMiddleSumSales(int[] sales) {
         int underMiddleSum = 0;
-        for (int i=0; i < sales.length; i++){
-            if (sales[i] < middleSumSales(sales)) {
+        for (int sale : sales) {
+            if (sale > middleSumSales(sales)) {
                 underMiddleSum++;
             }
         }
         return underMiddleSum;
     }
-    public int moreMiddleSumSales(int[] sales){
+
+    public int moreMiddleSumSales(int[] sales) {
         int moreMiddleSum = 0;
-        for (int i=0; i < sales.length; i++){
-            if (sales[i] > middleSumSales(sales)) {
+        for (int sale : sales) {
+            if (sale > middleSumSales(sales)) {
                 moreMiddleSum++;
             }
         }
