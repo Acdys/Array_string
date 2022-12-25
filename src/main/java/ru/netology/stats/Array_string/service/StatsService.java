@@ -41,8 +41,9 @@ public class StatsService {
 
     public int underMiddleSumSales(int[] sales) {
         int underMiddleSum = 0;
+        int middleSumSales = middleSumSales(sales);
         for (int sale : sales) {
-            if (sale > middleSumSales(sales)) {
+            if (sale < middleSumSales) {
                 underMiddleSum++;
             }
         }
@@ -51,8 +52,9 @@ public class StatsService {
 
     public int moreMiddleSumSales(int[] sales) {
         int moreMiddleSum = 0;
+        int middleSumSales = middleSumSales(sales);
         for (int sale : sales) {
-            if (sale > middleSumSales(sales)) {
+            if (sale > middleSumSales) {
                 moreMiddleSum++;
             }
         }
